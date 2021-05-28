@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:passwordToggleEnabled="true"
+    android:background="@drawable/bga"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="47dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="146dp"
+        android:text="LOGIN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/login2"
+        android:layout_width="104dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:text="LOGIN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="Enter the username"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="104dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="35dp"
+        android:background="@color/colorAccent"
+        android:text="SIGNUP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="35dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="48dp"
+        android:text="OR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login2" />
+
+</android.support.constraint.ConstraintLayout>
