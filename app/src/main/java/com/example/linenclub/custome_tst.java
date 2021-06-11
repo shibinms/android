@@ -17,19 +17,20 @@ import com.squareup.picasso.Picasso;
 public class custome_tst extends BaseAdapter {
     private android.content.Context Context;
 
-    String[] c,d,e,f;
+    String[] c,d,e,f,g;
 
 
 
 
 
-    public custome_tst(android.content.Context applicationContext, String[] c, String[] d,String[] e,String[] f) {
+    public custome_tst(android.content.Context applicationContext, String[] c, String[] d,String[] e,String[] f,String[] g) {
 
         this.Context=applicationContext;
         this.c=c;
         this.d=d;
         this.e=e;
         this.f=f;
+        this.g=g;
 
 
 
@@ -80,8 +81,10 @@ public class custome_tst extends BaseAdapter {
 
         TextView tv1=(TextView)gridView.findViewById(R.id.textView43);
         TextView tv2=(TextView)gridView.findViewById(R.id.textView44);
+        TextView tv5=(TextView)gridView.findViewById(R.id.textView48);
         TextView tv3=(TextView)gridView.findViewById(R.id.textView45);
         ImageView im=(ImageView)gridView.findViewById(R.id.imageView2);
+        TextView tv4=(TextView)gridView.findViewById(R.id.textView46);
 
 
         //  ImageView im=(ImageView)gridView.findViewById(R.id.imageView1);
@@ -106,7 +109,9 @@ public class custome_tst extends BaseAdapter {
 
         tv1.setTextColor(Color.BLACK);
         tv2.setTextColor(Color.BLACK);
-        tv3.setTextColor(Color.BLACK);
+        tv3.setTextColor(Color.RED);
+        tv5.setTextColor(Color.RED);
+        tv4.setTextColor(Color.BLACK);
 
 
 
@@ -117,6 +122,8 @@ public class custome_tst extends BaseAdapter {
         tv1.setText(c[position]);
         tv2.setText(d[position]);
         tv3.setText(e[position]);
+        tv4.setText(g[position]);
+        tv5.setText("\u20B9 ");
 
 
 

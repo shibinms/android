@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class new_home extends AppCompatActivity {
     ListView lv;
-    String[] product,description,price,image;
+    String[] product,gsm,price,image,description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +52,10 @@ public class new_home extends AppCompatActivity {
 
                                 JSONArray js = jsonObj.getJSONArray("data");
                                 product = new String[js.length()];
-                                description = new String[js.length()];
+                                gsm = new String[js.length()];
                                 price = new String[js.length()];
                                 image = new String[js.length()];
+                                description = new String[js.length()];
 
 
 
@@ -62,15 +63,16 @@ public class new_home extends AppCompatActivity {
                                 for (int i = 0; i < js.length(); i++) {
                                     JSONObject u = js.getJSONObject(i);
                                     product[i] = u.getString("product");
-                                    description[i] = u.getString("description");
+                                    gsm[i] = u.getString("gsm");
                                     price[i] = u.getString("price");
                                     image[i] = u.getString("image");
+                                    description[i] = u.getString("description");
 
 
                                 }
 //                                ArrayAdapter<String> ad=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,product);
 //                                lv.setAdapter(ad);
-                                lv.setAdapter(new custome_tst(getApplicationContext(),product,description,price,image));
+                                lv.setAdapter(new custome_tst(getApplicationContext(),product,gsm,price,image,description));
 
 //
                             }

@@ -36,7 +36,7 @@ import java.util.Map;
 public class Customer_Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     ListView lv;
-    String[] m_name,gsm,price,image;
+    String[] m_name,gsm,price,image,description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +84,7 @@ public class Customer_Home extends AppCompatActivity
                                 gsm = new String[js.length()];
                                 price = new String[js.length()];
                                 image = new String[js.length()];
+                                description = new String[js.length()];
 
 
 
@@ -94,12 +95,13 @@ public class Customer_Home extends AppCompatActivity
                                     gsm[i] = u.getString("gsm");
                                     price[i] = u.getString("price");
                                     image[i] = u.getString("image");
+                                    description[i] = u.getString("description");
 
 
                                 }
 //                                ArrayAdapter<String> ad=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,product);
 //                                lv.setAdapter(ad);
-                                lv.setAdapter(new custome_tst(getApplicationContext(),m_name,gsm,price,image));
+                                lv.setAdapter(new custome_tst(getApplicationContext(),m_name,gsm,price,image,description));
 
 //
                             }
@@ -172,9 +174,7 @@ public class Customer_Home extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }
