@@ -79,23 +79,11 @@ public class custome_delivered_product extends BaseAdapter {
         TextView tv2=(TextView)gridView.findViewById(R.id.textView16);
         TextView tv3=(TextView)gridView.findViewById(R.id.textView18);
         TextView tv4=(TextView)gridView.findViewById(R.id.textView20);
-
-
-        //  ImageView im=(ImageView)gridView.findViewById(R.id.imageView1);
-
-
+        TextView tv5=(TextView)gridView.findViewById(R.id.textView55);
+        TextView tv6=(TextView)gridView.findViewById(R.id.textView56);
 
 
 
-
-
-
-
-
-        //
-
-
-        /////////////////////
 
 
 
@@ -105,6 +93,8 @@ public class custome_delivered_product extends BaseAdapter {
         tv2.setTextColor(Color.BLACK);
         tv3.setTextColor(Color.BLACK);
         tv4.setTextColor(Color.BLACK);
+        tv5.setTextColor(Color.BLACK);
+        tv6.setTextColor(Color.BLACK);
 
 
         //tv6.setTextColor(Color.BLACK);
@@ -115,6 +105,8 @@ public class custome_delivered_product extends BaseAdapter {
         tv2.setText(d[position]);
         tv3.setText(c[position]);
         tv4.setText(e[position]);
+        tv5.setText("\u20B9 ");
+        tv6.setText("\u20B9 ");
 
 
         Button b3=(Button) gridView.findViewById(R.id.button7);

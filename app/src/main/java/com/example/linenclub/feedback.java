@@ -27,6 +27,7 @@ import java.util.Map;
 public class feedback extends AppCompatActivity implements View.OnClickListener {
     Button btn;
     EditText feedback;
+    boolean isFeedbackValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,12 @@ public class feedback extends AppCompatActivity implements View.OnClickListener 
         feedback = (EditText) findViewById(R.id.editText4);
         btn = (Button)findViewById(R.id.button2);
         btn.setOnClickListener(this);
+        SetValidation();
     }
 
     @Override
     public void onClick(View view) {
+
         final String fdk = feedback.getText().toString();
         SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String hu = sh.getString("ip", "");
@@ -115,5 +118,18 @@ public class feedback extends AppCompatActivity implements View.OnClickListener 
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postRequest);
+    }
+    public void SetValidation() {
+
+
+        if (feedback.getText().toString().isEmpty()) {
+            feedback.setError(getResources().getString(R.string.empty_error));
+            isFeedbackValid = false;
+        } else if (feedback.getText().length() > 150) {
+            feedback.setError(getResources().getString(R.string.error_feedback));
+            isFeedbackValid = false;
+        } else {
+            isFeedbackValid = true;
+        }
     }
 }

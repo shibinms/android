@@ -6,24 +6,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_Customer_Home"
-            android:icon="@drawable/lc_logo2"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="HOME" />
-        <item
-            android:id="@+id/nav_Customer_Profile"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="PROFILE" />
+
         <item
             android:id="@+id/nav_product"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="PENDING PRODUCT" />
+            android:icon="@drawable/ic_track_black_24dp"
+            android:title="PRODUCTION STATUS" />
         <item
             android:id="@+id/nav_delivered_product"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="DELIVERED PRODUCT" />
+            android:icon="@drawable/ic_delivered_black_24dp"
+            android:title="DELIVERED PRODUCTS" />
+        <item
+            android:id="@+id/nav_Customer_Profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="PROFILE" />
 
         <item
             android:id="@+id/nav_logout"
-            android:icon="@drawable/lc_logo2"
+            android:icon="@drawable/ic_input_black_24dp"
             android:title="LOGOUT" />
 
     </group>

@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,6 +45,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
     ImageView img22;
     String path, atype, fname, attach, attatch1;
     byte[] byteArray = null;
+    boolean isNameValid, isPlaceValid, isPostValid, isPinValid, isDistrictValid, isStateValid, isEmailValid, isPhoneValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +141,7 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        SetValidation();
         if(view.equals(img22)){
             showfilechooser(1);
 
@@ -244,7 +247,75 @@ public class signup extends AppCompatActivity implements View.OnClickListener {
     }
 
     }
+    public void SetValidation() {
 
+        if (ed_name.getText().toString().isEmpty()) {
+            ed_name.setError(getResources().getString(R.string.empty_error));
+            isNameValid = false;
+        } else  {
+            isNameValid = true;
+        }
+        if (ed_place.getText().toString().isEmpty()) {
+            ed_place.setError(getResources().getString(R.string.empty_error));
+            isPlaceValid = false;
+        } else  {
+            isPlaceValid = true;
+        }
+        if (ed_post.getText().toString().isEmpty()) {
+            ed_post.setError(getResources().getString(R.string.empty_error));
+            isPostValid = false;
+        } else  {
+            isPostValid = true;
+        }
+        if (ed_pin.getText().toString().isEmpty()) {
+            ed_pin.setError(getResources().getString(R.string.empty_error));
+            isPinValid = false;
+        } else if (ed_pin.getText().length() != 6) {
+            ed_pin.setError(getResources().getString(R.string.error_pincode));
+            isPinValid = false;
+        } else  {
+            isPinValid = true;
+        }
+        if (ed_phone.getText().toString().isEmpty()) {
+            ed_phone.setError(getResources().getString(R.string.empty_error));
+            isPhoneValid = false;
+        } else if (ed_phone.getText().length() != 10) {
+            ed_phone.setError(getResources().getString(R.string.error_phone));
+            isPhoneValid = false;
+        } else  {
+            isPhoneValid = true;
+        }
+        if (ed_email.getText().toString().isEmpty()) {
+            ed_email.setError(getResources().getString(R.string.email_error));
+            isEmailValid = false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(ed_email.getText().toString()).matches()) {
+            ed_email.setError(getResources().getString(R.string.error_invalid_email));
+            isEmailValid = false;
+        } else  {
+            isEmailValid = true;
+        }
+
+        if (ed_district.getText().toString().isEmpty()) {
+            ed_district.setError(getResources().getString(R.string.empty_error));
+            isDistrictValid = false;
+        } else  {
+            isDistrictValid = true;
+        }
+        if (ed_state.getText().toString().isEmpty()) {
+            ed_state.setError(getResources().getString(R.string.empty_error));
+            isStateValid = false;
+        } else  {
+            isStateValid = true;
+        }
+
+
+
+        return;
+
+
+
+
+    }
 
 //    @Override
 //    public void onClick(View view) {

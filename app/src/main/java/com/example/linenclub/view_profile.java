@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ public class view_profile extends AppCompatActivity implements View.OnClickListe
     String gen = ";";
     String path, atype, fname, attach, attatch1;
     byte[] byteArray = null;
+    boolean isNameValid, isPlaceValid, isPostValid, isPinValid, isDistrictValid, isStateValid, isImageValid;
 
 
     @Override
@@ -161,6 +163,7 @@ public class view_profile extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        SetValidation();
         if(view == btn_image){
             showfilechooser(1);
 
@@ -169,6 +172,10 @@ public class view_profile extends AppCompatActivity implements View.OnClickListe
                 gen22 = "Female";
             }else {
                 gen22 = "Male";
+            }
+            if (btn_image.isPressed()) {
+                btn_image.setClickable(false);
+
             }
         final String name = ed_name.getText().toString();
         final String place = ed_place.getText().toString();
@@ -181,7 +188,7 @@ public class view_profile extends AppCompatActivity implements View.OnClickListe
         SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String hu = sh.getString("ip", "");
         String url = "http://" + hu + ":8000/myapp/android_update_profile/";
-        Toast.makeText(this,hu, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,hu, Toast.LENGTH_SHORT).show();
 
 
 
@@ -190,12 +197,12 @@ public class view_profile extends AppCompatActivity implements View.OnClickListe
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
 
                         // response
                         try {
                             JSONObject jsonObj = new JSONObject(response);
-                            if (jsonObj.getString("status").equalsIgnoreCase("ok")) {
+                            if (jsonObj.getString("status").equalsIgnoreCase("ok") ) {
 
                                 Toast.makeText(getApplicationContext(), "Updated Successfully", Toast.LENGTH_SHORT).show();
 
@@ -221,7 +228,7 @@ public class view_profile extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // error
-                        Toast.makeText(getApplicationContext(), "eeeee" + error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Null Value" + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 }
         ) {
@@ -254,4 +261,56 @@ public class view_profile extends AppCompatActivity implements View.OnClickListe
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postRequest);
     }
-}}
+}
+    public void SetValidation() {
+
+        if (ed_name.getText().toString().isEmpty()) {
+            ed_name.setError(getResources().getString(R.string.empty_error));
+            isNameValid = false;
+        } else  {
+            isNameValid = true;
+        }
+        if (ed_place.getText().toString().isEmpty()) {
+            ed_place.setError(getResources().getString(R.string.empty_error));
+            isPlaceValid = false;
+        } else  {
+            isPlaceValid = true;
+        }
+        if (ed_post.getText().toString().isEmpty()) {
+            ed_post.setError(getResources().getString(R.string.empty_error));
+            isPostValid = false;
+        } else  {
+            isPostValid = true;
+        }
+        if (ed_pin.getText().toString().isEmpty()) {
+            ed_pin.setError(getResources().getString(R.string.empty_error));
+            isPinValid = false;
+        } else if (ed_pin.getText().length() != 6) {
+            ed_pin.setError(getResources().getString(R.string.error_pincode));
+            isPinValid = false;
+        } else  {
+            isPinValid = true;
+        }
+
+        if (ed_district.getText().toString().isEmpty()) {
+            ed_district.setError(getResources().getString(R.string.empty_error));
+            isDistrictValid = false;
+        } else  {
+            isDistrictValid = true;
+        }
+        if (ed_state.getText().toString().isEmpty()) {
+            ed_state.setError(getResources().getString(R.string.empty_error));
+            isStateValid = false;
+        } else  {
+            isStateValid = true;
+        }
+
+
+
+    return;
+
+
+
+
+    }
+}

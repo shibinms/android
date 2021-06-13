@@ -3,6 +3,7 @@ package com.example.linenclub;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,9 @@ import java.util.Map;
 public class login extends AppCompatActivity implements View.OnClickListener {
      Button btn_login, btn_signup;
      EditText ed_name,ed_password;
+     boolean isEmailValid, isPasswordValid;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +72,8 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String hu = sh.getString("ip", "");
         String url = "http://" + hu + ":8000/myapp/android_usr_login/";
-        Toast.makeText(this,hu, Toast.LENGTH_SHORT).show();
+        SetValidation();
+//        Toast.makeText(this,hu, Toast.LENGTH_SHORT).show();
 
 
 
@@ -77,7 +82,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                          Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+//                          Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
 
                         // response
                         try {
@@ -102,7 +107,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
                             // }
                             else {
-                                Toast.makeText(getApplicationContext(), "Not found", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "User Doesn't Exist !!", Toast.LENGTH_LONG).show();
                             }
 
                         }    catch (Exception e) {
@@ -142,6 +147,34 @@ public class login extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+    }
+    public void SetValidation() {
+        // Check for a valid email address.
+
+
+        if (ed_name.getText().toString().isEmpty()) {
+            ed_name.setError(getResources().getString(R.string.email_error));
+            isEmailValid = false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(ed_name.getText().toString()).matches()) {
+            ed_name.setError(getResources().getString(R.string.error_invalid_email));
+            isEmailValid = false;
+        } else  {
+            isEmailValid = true;
+        }
+
+        // Check for a valid password.
+        if (ed_password.getText().toString().isEmpty()) {
+            ed_password.setError(getResources().getString(R.string.password_error));
+            isPasswordValid = false;
+        } else if (ed_password.getText().length() < 4) {
+            ed_password.setError(getResources().getString(R.string.error_invalid_passwordd));
+            isPasswordValid = false;
+        } else  {
+            isPasswordValid = true;
+        }
+
+
+
     }
 
 

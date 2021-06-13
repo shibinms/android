@@ -4,37 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     app:passwordToggleEnabled="true"
-    android:background="@drawable/bga"
+    android:background="@color/colorPrimaryDark"
     android:layout_height="match_parent"
     tools:context=".login">
 
+
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="47dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="171dp"
-        android:layout_marginTop="146dp"
+        android:layout_width="178dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="150dp"
         android:text="LOGIN"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/login2"
-        android:layout_width="104dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="152dp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="32dp"
-        android:background="@color/colorAccent"
-        android:text="LOGIN"
+        android:background="@drawable/roundedbtn"
+        android:text="SIGN IN"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="34dp"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="Enter the username"
         android:inputType="textEmailAddress"
@@ -43,10 +47,11 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="97dp"
-        android:layout_marginTop="26dp"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -55,23 +60,26 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="104dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="35dp"
-        android:background="@color/colorAccent"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/roundedbtn"
         android:text="SIGNUP"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
     <TextView
         android:id="@+id/textView32"
-        android:layout_width="35dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="48dp"
-        android:text="OR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="16dp"
+        android:text="Don't You Have An Account ?"
+        android:textSize="18sp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login2" />
+
 
 </android.support.constraint.ConstraintLayout>

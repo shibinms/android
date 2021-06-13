@@ -51,7 +51,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String hu = sh.getString("ip", "");
         String url = "http://" + hu + ":8000/myapp/android_view_profile/";
-        Toast.makeText(this,hu, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this,hu, Toast.LENGTH_SHORT).show();
 
 
 
@@ -60,7 +60,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
 
                         // response
                         try {
@@ -94,7 +94,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                                 SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                                 String ss=sh.getString("ip", "");
                                 String url = "http://" + ss + ":8000"+profile1;
-                                Toast.makeText(getApplicationContext(), "tstid ass="+url, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getApplicationContext(), "tstid ass="+url, Toast.LENGTH_LONG).show();
 
                                 Picasso.with(getApplicationContext()).load(url).into(img);
 

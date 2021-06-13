@@ -14,6 +14,15 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="error_invalid_password">password must have at least 4 Numbers</string>
+    <string name="password_error">password field cannot be empty!!</string>
+    <string name="email_error">Email field cannot be empty!!</string>
+    <string name="error_invalid_email">You have entered an invalid email address!!</string>
+    <string name="error_invalid_passwordd">Password Must Have Atleast 3 Numbers</string>
+    <string name="empty_error">Field can\'t be empty !!</string>
+    <string name="error_pincode">Pin code should be 6 digits !!</string>
+    <string name="error_phone">Phone number should be 10 digits !!</string>
+    <string name="error_feedback">Fedback must be less than 150 charecters !!</string>
 
 
 </resources>

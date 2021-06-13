@@ -2,17 +2,18 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bga"
+    android:background="@color/colorPrimaryDark"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view_profile">
 
     <EditText
         android:id="@+id/editText12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="136dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="State"
         android:inputType="textPersonName"
@@ -21,10 +22,11 @@
 
     <EditText
         android:id="@+id/editText11"
-        android:layout_width="213dp"
-        android:layout_height="48dp"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="District"
         android:inputType="textPersonName"
@@ -33,11 +35,11 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="40dp"
+        android:layout_width="120dp"
 
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5">
 
@@ -60,10 +62,11 @@
 
     <EditText
         android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="Post"
         android:inputType="textPersonName"
@@ -72,10 +75,11 @@
 
     <EditText
         android:id="@+id/editText7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="Place"
         android:inputType="textPersonName"
@@ -84,10 +88,11 @@
 
     <EditText
         android:id="@+id/editText9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="Pin"
         android:inputType="textPersonName"
@@ -98,18 +103,21 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
+        android:layout_marginStart="145dp"
         android:layout_marginTop="44dp"
         android:text="PROFILE"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/roundedxml"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -117,14 +125,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 
-
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="87dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="26dp"
+        android:layout_width="91dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="25dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/roundedbtn"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/editText12"
         app:srcCompat="@android:drawable/ic_menu_upload" />
@@ -133,23 +140,24 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="4dp"
         android:text="Profile Image"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText12" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="35dp"
         android:layout_marginStart="156dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="167dp"
         android:layout_marginBottom="67dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/roundedbtn"
         android:text="UPDATE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
